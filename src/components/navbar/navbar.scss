@@ -1,6 +1,29 @@
 .navbar
 {
-    height: 80px;
-    width: 100%;
-    background-color: orangered;
+    
+    width: 96%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 4%;
+    align-items: center;
+    height: fit-content;
+
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    .nav_menu
+    {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        .menu_item
+        {
+            
+            list-style: none;
+            &:hover
+            {
+                background-color: aquamarine;
+            }
+        }
+    }
 }
