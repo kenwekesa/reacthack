@@ -1,0 +1,28 @@
+.home
+{
+    .pageContainer
+    {
+        display: flex;
+        height: 100%;
+
+        .sidebar 
+        {
+            flex: 1;
+            height: 100%;
+            
+        }
+        .pageBody 
+        {
+            flex: 6;
+            height: 100%;
+        }
+
+
+    }
+
+    .footer
+    {
+        position: absolute;
+        bottom: 0;
+    }
+}
