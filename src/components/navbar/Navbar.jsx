@@ -9,10 +9,9 @@ function Navbar() {
   return (
     <div className='navbar'>
       <ul className="nav_menu">
-        <li className="menu_item">Home</li>
-        <li className="menu_item">Products</li>
-        <li className="menu_item">Users</li>
-        <li className="menu_item">Orders</li>
+        <li className="menu_item">Dashboard</li>
+      
+       
         
       </ul>
       <div className="user">

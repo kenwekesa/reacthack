@@ -4,7 +4,7 @@ import "./footer.scss"
 
 function Footer() {
   return (
-    <div className='footer'>Footer</div>
+    <div className='footer'>Copyright @K2W 2022.</div>
   )
 }
 

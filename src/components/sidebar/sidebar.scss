@@ -1,9 +1,59 @@
 .sidebar
 {
-    background-color: gray;
+    background-color: rgb(56, 53, 53);
     width: 100%;
     height: 100%;
     border-right: 1px solid black;
     z-index:90%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+     
     box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    
+
+    .dash_head
+    {
+        height: 90px;
+        border-bottom: 1px solid rgb(180, 158, 158);
+        width: 100%;
+        margin-top: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 45px;
+        font-weight: bold;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: rgb(135, 179, 221);
+    }
+
+    .side_menu
+    {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+
+        .menu_item
+        {
+            list-style: none;
+            width: 100%;
+            text-align: center;
+            padding: 0;
+            padding-inline-start: 0;
+            font-size: 20px;
+            padding-top: 5px;
+            font-weight: bold;
+            padding-bottom: 5px;
+            color: white;
+
+            &:hover 
+            {
+                background-color: orangered;
+                color: rgb(13, 238, 227);
+                cursor: pointer;
+                
+            }
+        }
+    }
 }

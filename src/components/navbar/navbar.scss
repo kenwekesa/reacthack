@@ -8,6 +8,9 @@
     padding-right: 4%;
     align-items: center;
     height: fit-content;
+    padding-top: 0;
+    padding-bottom: 0;
+   
 
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
@@ -15,15 +18,22 @@
     {
         display: flex;
         flex-direction: row;
-        gap: 10px;
+      
         .menu_item
         {
             
             list-style: none;
+            font-weight: bold;
             &:hover
             {
                 background-color: aquamarine;
             }
         }
+    }
+
+    .user
+    {
+        font-size: 28px;
+        color: rgb(25, 105, 209);
     }
 }
