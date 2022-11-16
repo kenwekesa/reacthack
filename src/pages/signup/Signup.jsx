@@ -3,6 +3,12 @@ import Navbar from '../../components/navbar/Navbar'
 import DoneIcon from '@mui/icons-material/Done';
 import { useState, useEffect } from 'react';
 
+import { InputAdornment } from '@mui/material';
+import IconButton from '@mui/material';
+
+import { Visibility, VisibilityOff } from '@mui/icons-material';
+
+
 import './signup.scss'
 
 function Signup() {
@@ -13,6 +19,11 @@ function Signup() {
     const [atleastEightcharacters, setAtleasteightcharacters] = useState(false)
     const [containsnumber, setContainsnumber] = useState(false)
     const [passwordMatches, setPasswordmatches] = useState(false)
+
+     const [values, setValues] = React.useState({
+    password: "",
+    showPassword: false,
+  });
 
     var special_characters = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
 
@@ -34,6 +45,15 @@ function Signup() {
             setPasswordmatches(password!=0 && password==confirmpass)
         
             }, [confirmpass]); 
+
+
+            const handleClickShowPassword = () => {
+                setValues({ ...values, showPassword: !values.showPassword });
+              };
+              
+              const handleMouseDownPassword = (event) => {
+                event.preventDefault();
+              };
 
   return (
   <div className="signup">
@@ -72,6 +92,16 @@ function Signup() {
                     
                         
                         }} 
+                        endAdornment={
+                            <InputAdornment position='end'>
+                                <IconButton
+                                    onClick={handleClickShowPassword}
+                                    onMouseDown={handleMouseDownPassword}
+                                >
+                                {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                                </IconButton>
+                            </InputAdornment>
+                        }
                         />
 
                      <div className="pass_requirements">
