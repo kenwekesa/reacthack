@@ -1,13 +1,22 @@
 import React from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import DoneIcon from '@mui/icons-material/Done';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import './signup.scss'
 
 function Signup() {
     const [password, setPassword] = useState("")
     const [containsnumber, setContainsnumber] = useState(false)
+
+
+    useEffect(() => {
+            setContainsnumber(/\d/.test(password))
+            console.log(password);
+            console.log(containsnumber)
+        
+    }, [password]); 
+
   return (
   <div className="signup">
     <Navbar/>
@@ -36,9 +45,14 @@ function Signup() {
                     <input type='password' 
                     placeholder='Enter password' 
                     className='input'
-                    onChange={e=>{
+                    
+                    onKeyUp={e=>{
+                        
+                        
                         setPassword(e.target.value); 
-                        setContainsnumber(/\d/.test(password))
+                        
+                    
+                        
                         }} 
                         />
 
