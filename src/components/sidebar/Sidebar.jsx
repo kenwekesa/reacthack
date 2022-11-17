@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import './sidebar.scss'
 
@@ -7,9 +8,9 @@ function Sidebar() {
     <div className='sidebar'>
       <span className='dash_head'>K2W</span>
       <div className='side_menu'>
-        <span className="menu_item">Products</span>
-        <span className="menu_item">Users</span>
-        <span className="menu_item">Orders</span>
+        <Link to='/products'><span className="menu_item">Products</span></Link>
+        <Link to='/users' ><span className="menu_item">Users</span></Link>
+        <Link to='orders'><span className="menu_item">Orders</span></Link>
       </div>
     </div>
   )

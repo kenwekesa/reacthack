@@ -4,12 +4,27 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/home/Home';
 import Signup from './pages/signup/Signup';
+import Users from './pages/users/Users';
+import Products from './pages/products/Products';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    
-    <Signup/>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/'>
+          <Route index element={<Home />} />
+          <Route path='hotels' element={<Home />} />
+          <Route path='signup' element={<Signup />} />
+          <Route path='users' element={<Users />} />
+          <Route path='products' element={<Products />} />
+
+        </Route>
+      </Routes>
+    </BrowserRouter>
+
   </React.StrictMode>
 );
 
