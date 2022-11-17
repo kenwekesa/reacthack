@@ -1,6 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
+
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+
+
 import './sidebar.scss'
 
 function Sidebar() {
@@ -8,9 +13,9 @@ function Sidebar() {
     <div className='sidebar'>
       <span className='dash_head'>K2W</span>
       <div className='side_menu'>
-        <Link to='/products'><span className="menu_item">Products</span></Link>
-        <Link to='/users' ><span className="menu_item">Users</span></Link>
-        <Link to='orders'><span className="menu_item">Orders</span></Link>
+        <Link to='/products' className="menu_item"><span >Products</span></Link>
+        <Link to='/users' className="menu_item"><span><SupervisedUserCircleIcon />Users</span></Link>
+        <Link to='orders' className="menu_item"><span><ShoppingBagIcon />Orders</span></Link>
       </div>
     </div>
   )

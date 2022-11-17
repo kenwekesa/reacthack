@@ -38,14 +38,19 @@
         {
             list-style: none;
             width: 100%;
-            text-align: center;
+            text-align: left;
             padding: 0;
+            text-decoration: none;
             padding-inline-start: 0;
             font-size: 20px;
             padding-top: 5px;
             font-weight: bold;
             padding-bottom: 5px;
             color: white;
+            span
+            {
+                margin-left: 8px;
+            }
 
             &:hover 
             {
