@@ -11,7 +11,7 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 import './signup.scss'
 
-function Signup() {
+function Signup(props) {
     const [password, setPassword] = useState("")
     const [confirmpass, setConfirmpass] = useState("")
     const [containsSpecial, setContainespecial] = useState(false)
@@ -46,18 +46,19 @@ function Signup() {
 
     }, [confirmpass]);
 
-
-    const handleClickShowPassword = () => {
-        setValues({ ...values, showPassword: !values.showPassword });
-    };
-
-    const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-    };
+    /*
+        const handleClickShowPassword = () => {
+            setValues({ ...values, showPassword: !values.showPassword });
+        };
+    
+        const handleMouseDownPassword = (event) => {
+            event.preventDefault();
+        };
+        */
 
     return (
         <div className="signup">
-            <Navbar />
+            <Navbar title={props.name} />
             <div className="formContainer">
 
                 <div className="signup_form">

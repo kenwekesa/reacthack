@@ -1,19 +1,17 @@
-.sidebar
-{
+.sidebar {
     background-color: rgb(56, 53, 53);
     width: 100%;
     height: 100%;
     border-right: 1px solid black;
-    z-index:90%;
+    z-index: 90%;
     display: flex;
     align-items: center;
     flex-direction: column;
-     
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    
 
-    .dash_head
-    {
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+
+    .dash_head {
         height: 90px;
         border-bottom: 1px solid rgb(180, 158, 158);
         width: 100%;
@@ -27,15 +25,13 @@
         color: rgb(135, 179, 221);
     }
 
-    .side_menu
-    {
+    .side_menu {
         width: 100%;
         display: flex;
         flex-direction: column;
         margin-top: 15px;
 
-        .menu_item
-        {
+        .menu_item {
             list-style: none;
             width: 100%;
             text-align: left;
@@ -44,20 +40,22 @@
             padding-inline-start: 0;
             font-size: 20px;
             padding-top: 5px;
-            font-weight: bold;
+            font-weight: 600;
             padding-bottom: 5px;
             color: white;
-            span
-            {
-                margin-left: 8px;
+
+            span {
+                margin-left: 20px;
+                display: flex;
+                gap: 8px;
+                align-items: center;
             }
 
-            &:hover 
-            {
+            &:hover {
                 background-color: orangered;
                 color: rgb(13, 238, 227);
                 cursor: pointer;
-                
+
             }
         }
     }

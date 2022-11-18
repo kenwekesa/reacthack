@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import reportWebVitals from './reportWebVitals';
 import Home from './pages/home/Home';
 import Signup from './pages/signup/Signup';
 import Users from './pages/users/Users';
 import Products from './pages/products/Products';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Orders from './pages/orders/Orders';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,11 +15,11 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/'>
-          <Route index element={<Home />} />
-          <Route path='hotels' element={<Home />} />
-          <Route path='signup' element={<Signup />} />
-          <Route path='users' element={<Users />} />
-          <Route path='products' element={<Products />} />
+          <Route index element={<Home name="Dashboard" />} />
+          <Route path='orders' element={<Orders name="Orders" />} />
+          <Route path='signup' element={<Signup name="Signup" />} />
+          <Route path='users' element={<Users name="Users" />} />
+          <Route path='products' element={<Products name="Products" />} />
 
         </Route>
       </Routes>
@@ -31,4 +31,3 @@ root.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

@@ -1,6 +1,5 @@
-.navbar
-{
-    
+.navbar {
+
     width: 96%;
     background-color: white;
     display: flex;
@@ -10,30 +9,65 @@
     height: fit-content;
     padding-top: 0;
     padding-bottom: 0;
-   
+
 
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-    .nav_menu
-    {
+    .nav_menu {
         display: flex;
         flex-direction: row;
-      
-        .menu_item
-        {
-            
+
+        .menu_item {
+
             list-style: none;
             font-weight: bold;
-            &:hover
-            {
+
+            &:hover {
                 background-color: aquamarine;
             }
         }
     }
 
-    .user
-    {
+    .user {
         font-size: 28px;
         color: rgb(25, 105, 209);
+        position: relative;
+
+        .drop_menu {
+            position: absolute;
+            background-color: white;
+            z-index: 20px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            left: -58px;
+            width: fit-content;
+
+
+
+            .menu {
+                display: flex;
+                flex-direction: column;
+                padding-left: 8px;
+                padding-right: 30px;
+                width: fit-content;
+
+
+
+
+                span {
+
+                    width: 100%;
+                    max-width: 100vh;
+
+
+                    &:hover {
+                        background-color: orangered;
+                        color: white;
+                        cursor: pointer;
+
+
+                    }
+                }
+            }
+        }
     }
 }

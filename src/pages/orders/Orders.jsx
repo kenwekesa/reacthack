@@ -3,9 +3,9 @@ import Footer from '../../components/footer/Footer'
 import Navbar from '../../components/navbar/Navbar'
 import Sidebar from '../../components/sidebar/Sidebar'
 
-import { DataGrid } from '@mui/x-data-grid'
+import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid'
 
-import "./products.scss"
+import "./orders.scss"
 
 
 const rows = [
@@ -18,7 +18,7 @@ const columns = [
     { field: 'col1', headerName: 'Column 1', width: 150 },
     { field: 'col2', headerName: 'Column 2', width: 150 },
 ];
-function Products(props) {
+function Orders(props) {
     return (
         <div className='home'>
 
@@ -29,17 +29,13 @@ function Products(props) {
                 </div>
                 <div className="pageBody">
                     <Navbar title={props.name} />
-
-                    <div style={{ height: 300, marginLeft: 10 }}>
-
-                        <DataGrid
-                            rows={rows}
-                            columns={columns}
-                            pageSize={5}
-                            rowsPerPageOptions={[5]}
-                            checkboxSelection
-                        />
-                    </div>
+                    <DataGrid
+                        rows={rows}
+                        columns={columns}
+                        pageSize={5}
+                        rowsPerPageOptions={[5]}
+                        checkboxSelection
+                    />
                 </div>
 
             </div>
@@ -50,4 +46,4 @@ function Products(props) {
     )
 }
 
-export default Products
+export default Orders
