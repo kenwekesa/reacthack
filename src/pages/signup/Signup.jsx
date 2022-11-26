@@ -1,17 +1,19 @@
-import React from 'react'
-import Navbar from '../../components/navbar/Navbar'
-import DoneIcon from '@mui/icons-material/Done';
-import { useState, useEffect } from 'react';
+// React from 'react'
+//import Navbar from '../../components/navbar/Navbar'
+// DoneIcon from '@mui/icons-material/Done';
+//import { useState, useEffect } from 'react';
 
-import { InputAdornment } from '@mui/material';
+//import { InputAdornment } from '@mui/material';
 //import IconButton from '@mui/material';
 
-import { Visibility, VisibilityOff } from '@mui/icons-material';
+//import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 
 import './signup.scss'
 
 function Signup(props) {
+
+    /*
     const [password, setPassword] = useState("")
     const [confirmpass, setConfirmpass] = useState("")
     const [containsSpecial, setContainespecial] = useState(false)
@@ -54,7 +56,7 @@ function Signup(props) {
         const handleMouseDownPassword = (event) => {
             event.preventDefault();
         };
-        */
+        
 
     return (
         <div className="signup">
@@ -95,8 +97,7 @@ function Signup(props) {
                                     }}
 
                                 />
-                                <Visibility />
-                                <VisibilityOff />
+
 
                                 <div className="pass_requirements">
                                     <span style={{ color: atleastEightcharacters ? "green" : "" }}>{atleastEightcharacters && <DoneIcon />} Be at least 8 characters</span>
@@ -127,6 +128,7 @@ function Signup(props) {
             </div>
         </div>
     )
+    */
 }
 
 export default Signup

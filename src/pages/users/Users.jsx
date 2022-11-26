@@ -10,14 +10,17 @@ import "./users.scss"
 function Users(props) {
 
     const rows = [
-        { id: 1, name: 'Martin Olando', username: 'marto' },
-        { id: 2, name: 'Katrina Nzaka', username: 'kartrin' },
-        { id: 3, name: 'Ayub Samba', username: 'ayumba' },
+        { id: 1, name: 'Martin Olando', username: 'marto', email: "marto@gmail.com", phone: '298488384', city: 'Mombasa' },
+        { id: 2, name: 'Katrina Nzaka', username: 'kartrin', email: 'kart@gmail.com', phone: '232122', city: 'Nairobi' },
+        { id: 3, name: 'Ayub Samba', username: 'ayumba', email: 'ayub@gmail.com', phone: '38843', city: 'Bungoma' },
     ];
 
     const columns = [
         { field: 'name', headerName: 'Name', width: 150 },
         { field: 'username', headerName: 'Username', width: 150 },
+        { field: 'email', headerName: 'Email', width: 150 },
+        { field: 'phone', headerName: 'Phone', width: 150 },
+        { field: 'city', headerName: 'City', width: 150 },
     ];
 
     return (
@@ -28,8 +31,12 @@ function Users(props) {
                 <div className="sidebar">
                     <Sidebar />
                 </div>
+
                 <div className="pageBody">
                     <Navbar title={props.name} />
+                    <div className="action_btns">
+                        <span>Add new User</span>
+                    </div>
 
                     <div style={{ height: 300, marginLeft: 10 }}>
 
