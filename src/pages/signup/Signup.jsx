@@ -1,18 +1,18 @@
 import React from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import DoneIcon from '@mui/icons-material/Done';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
+
 //import OutlinedInput from '@mui/material';
 
-import OutlinedInput from '@mui/material/OutlinedInput';
+
+import Users from '../users/Users'
+
 
 import { useState, useEffect } from 'react';
 
-import { InputAdornment } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
+import userContext from '../../contexts/UserContext';
 
-import { Visibility, VisibilityOff } from '@mui/icons-material';
+
 
 
 
@@ -29,41 +29,83 @@ function Signup(props) {
     const [containsnumber, setContainsnumber] = useState(false)
     const [passwordMatches, setPasswordmatches] = useState(false)
 
-    const [values, setValues] = React.useState({
+    const [values, setValues] = useState({
         password: "",
-        showPassword: false,
+        username: "",
+        email: "",
+        city: "",
+        phone: "",
+        address: ""
+
     });
 
 
 
+    const handleUsernameChange = (e) => {
+        setValues({ ...values, username: e.target.value })
 
-    var special_characters = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+        //console.log(values)
+    }
+
+    const handleCityChange = (e) => {
+        setValues({ ...values, city: e.target.value })
+
+        console.log(values)
+    }
+
+    const handlePhoneChange = (e) => {
+        setValues({ ...values, phone: e.target.value })
+
+        console.log(values)
+    }
+
+    const handleEmailChange = (e) => {
+        setValues({ ...values, email: e.target.value })
+
+        console.log(values)
+    }
+
+    const handleAddressChange = (e) => {
+        setValues({ ...values, address: e.target.value })
+
+        console.log(values)
+    }
+
+    const handleSubmit = () => {
+        return (
+            <userContext.Provider value={values}>
+                <Users />
+
+            </userContext.Provider>
+        )
+
+    }
+
+
     useEffect(() => {
+        const special_characters = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
         setContainsnumber(/\d/.test(password))
         setContainsCaps(/[A-Z]/.test(password) && /[a-z]/.test(password))
         setContainespecial(special_characters.test(password))
 
         setAtleasteightcharacters(password.length >= 8)
 
-        console.log(password);
-        console.log(containsnumber)
+        setValues({ values, password: password })
+
+        console.log(values)
+
+
 
     }, [password]);
 
     useEffect(() => {
 
-        setPasswordmatches(password != 0 && password == confirmpass)
+        setPasswordmatches(password !== 0 && password === confirmpass)
 
-    }, [confirmpass]);
+    }, [password, confirmpass]);
 
 
-    const handleClickShowPassword = () => {
-        setValues({ ...values, showPassword: !values.showPassword });
-    };
 
-    const handleChange = (event) => {
-        setPassword(event.target.value)
-    };
 
 
     return (
@@ -79,39 +121,53 @@ function Signup(props) {
                         <div className="form_field">
 
                             <div className="username_div">
-                                <input type='text' placeholder='Username' className='input' />
+                                <input type='text' placeholder='Username'
+                                    className='input'
+                                    onChange={handleUsernameChange} />
                             </div>
                         </div>
                         <div className="form_field">
 
                             <div className="email_div">
-                                <input type='text' placeholder='email address e.g ken@gmail.com' className='input' />
+                                <input type='text'
+                                    placeholder='email address e.g ken@gmail.com'
+                                    className='input'
+                                    onChange={handleEmailChange} />
+                            </div>
+                        </div>
+
+                        <div className="form_field">
+
+                            <div className="city_div">
+                                <input type='text'
+                                    placeholder='City'
+                                    className='input'
+                                    onChange={handleCityChange} />
+                            </div>
+                        </div>
+
+                        <div className="form_field">
+
+                            <div className="phone_div">
+                                <input type='text'
+                                    placeholder='Phone Number eg 073*******'
+                                    className='input'
+                                    onChange={handlePhoneChange}
+                                />
+                            </div>
+                        </div>
+
+                        <div className="form_field">
+
+                            <div className="address_div">
+                                <input type='text' placeholder='Physical Address' className='input'
+                                    onChange={handleAddressChange}
+                                />
                             </div>
                         </div>
 
 
 
-                        <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
-                            <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-                            <OutlinedInput
-                                id="outlined-adornment-password"
-                                type={values.showPassword ? 'text' : 'password'}
-                                value={values.password}
-                                onChange={handleChange('password')}
-                                endAdornment={
-                                    <InputAdornment position="end">
-                                        <IconButton
-                                            aria-label="toggle password visibility"
-                                            onClick={handleClickShowPassword}
-                                            edge="end"
-                                        >
-                                            {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                                        </IconButton>
-                                    </InputAdornment>
-                                }
-                                label="Password"
-                            />
-                        </FormControl>
 
 
                         <div className="form_field">
@@ -158,7 +214,7 @@ function Signup(props) {
                             </div>
                         </div>
                         <div className="button">
-                            <a href="#" className='submit_button'>Submit</a>
+                            <span className='submit_button' onClick={handleSubmit}>Submit</span>
                         </div>
                     </div>
                 </div>

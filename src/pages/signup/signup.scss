@@ -1,123 +1,119 @@
-.signup
-{
+.signup {
     min-height: 100vh;
     width: 100%;
-    
-    .formContainer
-    {
+
+    .formContainer {
         width: 100%;
-        height: 100vh;
+        min-height: 100vh;
         margin-top: -10px;
         display: flex;
         justify-content: center;
         align-items: center;
 
-        
-        .signup_form  
-        {
+
+        .signup_form {
             width: 40%;
-            height: 80%;
-            box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-        .form_head
-        {
-            width: 100%;
+            padding-bottom: 30px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgb(55, 105, 161);
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            padding:8px 0px;
-        }
-        .form_body
-        {
-            display: flex;
-            margin: 1px 10px;
-            justify-content: center;
             flex-direction: column;
-            align-items: center;
-            gap: 19px;
-            width: 100%;
-            height: 100%;
+            gap: 9px;
+            box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 
-            .form_field
-            {
+            .form_head {
+                width: 100%;
                 display: flex;
-                gap: 18px;
-                font-size: 20px;
-                width: 90%;
+                align-items: center;
                 justify-content: center;
-                
+                background-color: rgb(55, 105, 161);
+                color: white;
+                font-size: 24px;
+                font-weight: bold;
+                padding: 8px 0px;
+            }
 
-                span 
-                {
-                    font-weight: 600;
-                    min-width: 20%;
-                }
-                div 
-                {
-                    min-width: 60%;
-                }
-                .input 
-                {
-                    padding: 10px 20px;
-                    border: 1px solid gray;
-                    border-radius: 5px;
-                    width: 100%;
-                    font-size: 15px;
+            .form_body {
+                display: flex;
+                margin: 1px 10px;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                gap: 19px;
+                width: 100%;
+                height: 100%;
 
-                    &:focus 
-                    {
-                    
-                        outline: none;
-                        border: 2px solid rgb(116, 163, 224);
-                        
-
-
-                    }
-                }
-                .pass_div 
-                {
+                .form_field {
                     display: flex;
-                    flex-direction: column;
-                    gap: 8px;
+                    gap: 18px;
+                    font-size: 20px;
+                    width: 90%;
+                    justify-content: center;
 
-                    .pass_requirements 
-                    {
-                        display: flex;
-                        flex-direction: column;
-                        font-size: 12px;
-                        font-weight: 100;
-                        span 
-                        {
-                            display: flex;
-                            align-items: center;
-                           
+
+                    span {
+                        font-weight: 600;
+                        min-width: 20%;
+                    }
+
+                    div {
+                        min-width: 60%;
+                    }
+
+                    .input {
+                        padding: 10px 20px;
+                        border: 1px solid gray;
+                        border-radius: 5px;
+                        width: 100%;
+                        font-size: 15px;
+
+                        &:focus {
+
+                            outline: none;
+                            border: 2px solid rgb(116, 163, 224);
+
+
+
                         }
                     }
+
+                    .pass_div {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+
+                        .pass_requirements {
+                            display: flex;
+                            flex-direction: column;
+                            font-size: 12px;
+                            font-weight: 100;
+
+                            span {
+                                display: flex;
+                                align-items: center;
+
+                            }
+                        }
+                    }
+
                 }
 
+                .button {
+                    display: flex;
+                    justify-content: space-around;
+                    width: 100%;
+
+                    .submit_button {
+                        background-color: rgb(63, 77, 209);
+                        color: white;
+                        width: 50%;
+                        padding: 10px;
+                        text-align: center;
+                        font-weight: 600;
+                        cursor: pointer;
+                        text-decoration: none;
+
+                    }
+                }
             }
-            .button 
-            {
-                display: flex;
-                justify-content: space-around;
-                width: 100%;
-            .submit_button 
-            {
-                background-color: rgb(63, 77, 209);
-                color: white;
-                width: 50%;
-                padding: 10px;
-                text-align: center;
-                font-weight: 600;
-                cursor: pointer;
-                text-decoration: none;
-              
-            }
-        }
-    }
         }
 
     }

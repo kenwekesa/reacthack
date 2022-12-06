@@ -3,12 +3,20 @@ import Footer from '../../components/footer/Footer'
 import Navbar from '../../components/navbar/Navbar'
 import Sidebar from '../../components/sidebar/Sidebar'
 
+
+//The user context
+import userContext from '../../contexts/UserContext'
+import { useContext } from 'react'
+
 import { DataGrid } from '@mui/x-data-grid'
 
 import "./users.scss"
 
 function Users(props) {
 
+    const users = useContext(userContext)
+
+    console.log(users)
     const rows = [
         { id: 1, name: 'Martin Olando', username: 'marto', email: "marto@gmail.com", phone: '298488384', city: 'Mombasa' },
         { id: 2, name: 'Katrina Nzaka', username: 'kartrin', email: 'kart@gmail.com', phone: '232122', city: 'Nairobi' },
@@ -41,7 +49,7 @@ function Users(props) {
                     <div style={{ height: 300, marginLeft: 10 }}>
 
                         <DataGrid
-                            rows={rows}
+                            rows={[...users]}
                             columns={columns}
                             pageSize={5}
                             rowsPerPageOptions={[5]}
