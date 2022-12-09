@@ -2,6 +2,8 @@ import React from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import DoneIcon from '@mui/icons-material/Done';
 
+import { useContext } from 'react'
+
 //import OutlinedInput from '@mui/material';
 
 
@@ -19,6 +21,11 @@ import userContext from '../../contexts/UserContext';
 import './signup.scss'
 
 function Signup(props) {
+
+
+
+    const users_list = useContext(userContext)
+
 
 
     const [password, setPassword] = useState("")
@@ -72,8 +79,10 @@ function Signup(props) {
     }
 
     const handleSubmit = () => {
+        users_list.push(values)
+        console.log(users_list)
         return (
-            <userContext.Provider value={values}>
+            <userContext.Provider value={users_list}>
                 <Users />
 
             </userContext.Provider>
