@@ -24,7 +24,9 @@ function Signup(props) {
 
 
 
-    const users_list = useContext(userContext)
+    const { users, setUsers } = useContext(userContext)
+
+
 
 
 
@@ -57,36 +59,35 @@ function Signup(props) {
     const handleCityChange = (e) => {
         setValues({ ...values, city: e.target.value })
 
-        console.log(values)
+
     }
 
     const handlePhoneChange = (e) => {
         setValues({ ...values, phone: e.target.value })
 
-        console.log(values)
     }
 
     const handleEmailChange = (e) => {
         setValues({ ...values, email: e.target.value })
 
-        console.log(values)
+
     }
 
     const handleAddressChange = (e) => {
         setValues({ ...values, address: e.target.value })
 
-        console.log(values)
+
     }
 
     const handleSubmit = () => {
-        users_list.push(values)
-        console.log(users_list)
-        return (
-            <userContext.Provider value={users_list}>
-                <Users />
 
-            </userContext.Provider>
-        )
+        console.log(users)
+        //console.log(users.push(values))
+        setUsers([...users, values])
+        console.log(users)
+
+
+
 
     }
 
@@ -101,7 +102,7 @@ function Signup(props) {
 
         setValues({ values, password: password })
 
-        console.log(values)
+
 
 
 

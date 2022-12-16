@@ -14,7 +14,7 @@ import "./users.scss"
 
 function Users(props) {
 
-    const users = useContext(userContext)
+    const { users, setUsers } = useContext(userContext)
 
     console.log(users)
     const rows = [
@@ -52,6 +52,7 @@ function Users(props) {
                             rows={[...users]}
                             columns={columns}
                             pageSize={5}
+                            getRowId={(row) => row.email}
                             rowsPerPageOptions={[5]}
                             checkboxSelection
                         />
