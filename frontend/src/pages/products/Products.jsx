@@ -3,6 +3,9 @@ import Footer from '../../components/footer/Footer'
 import Navbar from '../../components/navbar/Navbar'
 import Sidebar from '../../components/sidebar/Sidebar'
 
+//importing hoooks
+import useFetch from '../../hooks/useFetch'
+
 import { DataGrid } from '@mui/x-data-grid'
 
 import "./products.scss"
@@ -19,7 +22,15 @@ const columns = [
     { field: 'col2', headerName: 'Column 2', width: 150 },
 ];
 function Products(props) {
+
+
+
+    const {data, loading, error, reFetch} = useFetch(`/users/`)
+
+
+
     return (
+        
         <div className='home'>
 
             <div className="pageContainer">
@@ -30,8 +41,11 @@ function Products(props) {
                 <div className="pageBody">
                     <Navbar title={props.name} />
 
+
+                    {loading? <div>Loading...</div>:
                     <div style={{ height: 300, marginLeft: 10 }}>
 
+                    
                         <DataGrid
                             rows={rows}
                             columns={columns}
@@ -40,6 +54,7 @@ function Products(props) {
                             checkboxSelection
                         />
                     </div>
+}
                 </div>
 
             </div>

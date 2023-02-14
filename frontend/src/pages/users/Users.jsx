@@ -10,11 +10,20 @@ import { useContext } from 'react'
 
 import { DataGrid } from '@mui/x-data-grid'
 
+//import hooks
+import useFetch from '../../hooks/useFetch'
+
 import "./users.scss"
+
+import Loadingmodal from '../../components/modal/Loadingmodal'
+
+export const LoadingmodalContext = React.createContext();
 
 function Users(props) {
 
     const { users, setUsers } = useContext(userContext)
+
+    const {data, loading, error, reFetch} = useFetch(`/users/`)
 
     console.log(users)
     const rows = [
@@ -29,6 +38,7 @@ function Users(props) {
         { field: 'email', headerName: 'Email', width: 150 },
         { field: 'phone', headerName: 'Phone', width: 150 },
         { field: 'city', headerName: 'City', width: 150 },
+        { field: 'skills', headerName: 'Roles', width: 250 },
     ];
 
     return (
@@ -45,11 +55,16 @@ function Users(props) {
                     <div className="action_btns">
                         <span>Add new User</span>
                     </div>
-
+                    {loading? 
+                    
+                        <LoadingmodalContext.Provider>
+                             <Loadingmodal message = "Please wait..." type="load" />
+                        </LoadingmodalContext.Provider>
+                    :
                     <div style={{ height: 300, marginLeft: 10 }}>
 
                         <DataGrid
-                            rows={[...users]}
+                            rows={[...data]}
                             columns={columns}
                             pageSize={5}
                             getRowId={(row) => row.email}
@@ -57,6 +72,7 @@ function Users(props) {
                             checkboxSelection
                         />
                     </div>
+}
                 </div>
 
             </div>
