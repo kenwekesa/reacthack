@@ -61,7 +61,7 @@ function Users(props) {
                              <Loadingmodal message = "Please wait..." type="load" />
                         </LoadingmodalContext.Provider>
                     :
-                    <div style={{ height: 300, marginLeft: 10 }}>
+                    <div style={{ height: 600, marginLeft: 10 }}>
 
                         <DataGrid
                             rows={[...data]}
