@@ -48,7 +48,11 @@
                     width: 90%;
                     justify-content: center;
 
-
+                    .form_message
+                    {
+                        font-size: 13px;
+                        color: red;
+                    }
                     span {
                         font-weight: 600;
                         min-width: 20%;
@@ -57,7 +61,7 @@
                     div {
                         min-width: 60%;
                     }
-
+                   
                     .input {
                         padding: 10px 20px;
                         border: 1px solid gray;
@@ -73,6 +77,11 @@
 
 
                         }
+                    }
+
+                    .invalid
+                    {
+                        border: 1px solid rgb(247, 8, 8);
                     }
 
                     .pass_div {

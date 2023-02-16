@@ -13,6 +13,8 @@ import Users from '../users/Users'
 import { useState, useEffect } from 'react';
 import axios from 'axios'
 
+import useFetch from '../../hooks/useFetch';
+
 import userContext from '../../contexts/UserContext';
 
 
@@ -43,6 +45,9 @@ function Signup(props) {
     const [phone, setPhone] = useState("")
     const [address, setAddress] = useState("")
 
+    const [validate, setValidate] = useState("")
+    const [validateMessage, setValidateMessage] = useState(null)
+
 
     const [confirmpass, setConfirmpass] = useState("")
 
@@ -71,6 +76,12 @@ function Signup(props) {
 
     const skills = ["Programming","Graphics","Android","Data analysis"]
 
+    const {data, loading, error, reFetch} = useFetch(`/users/`)
+
+    useEffect(()=>
+    {
+        reFetch()
+    },[])
     const handleUsernameChange = (e) => {
         setValues({ ...values, username: e.target.value })
         setUsername(e.target.value)
@@ -109,7 +120,22 @@ function Signup(props) {
 
         
         const handleSubmit =async () =>
-    {
+    { if(loading)
+        {
+
+        }
+        else
+        {
+            if(data.find((user)=> user.username === username ))
+            {
+               console.log("user already exists")
+               setValidateMessage("Another user with the username already exists")
+               setValidate("invalid")
+            }
+            else
+            {
+                setValidateMessage(null)
+               setValidate("")
       try {
         
         
@@ -130,6 +156,8 @@ function Signup(props) {
       } catch (error) {
         console.log(error)
       }
+    }
+    }
     }
 
 
@@ -197,8 +225,9 @@ function Signup(props) {
 
                             <div className="username_div">
                                 <input type='text' placeholder='Username'
-                                    className='input'
+                                    className={`input ${validate}`}
                                     onChange={handleUsernameChange} />
+                            <div className='form_message'>{validateMessage}</div>
                             </div>
                         </div>
                         <div className="form_field">
