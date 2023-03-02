@@ -28,7 +28,7 @@ function Navbar(props) {
         <ArrowDropDown />
         {toggle &&
           <div className="dropdown_menu">
-            <div className="login_btn">Login</div>
+            <Link to='/login' className="login_btn"><span >Login</span></Link>
             <Link to='/signup' className="signup_btn"><span >Signup</span></Link>
 
           </div>

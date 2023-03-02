@@ -7,6 +7,7 @@ import Home from './pages/home/Home';
 import Signup from './pages/signup/Signup';
 import Users from './pages/users/Users';
 import Products from './pages/products/Products';
+import Login from './pages/login/Login';
 
 import userContext from './contexts/UserContext';
 
@@ -36,6 +37,7 @@ function App() {
                     <Route index element={<Home name="Dashboard" />} />
                     <Route path='orders' element={<Orders name="Orders" />} />
                     <Route path='signup' element={<Signup name="Signup" />} />
+                    <Route path='login' element={<Login name="Login" />} />
                     <Route path='users' element={<Users name="Users" />} />
                     <Route path='products' element={<Products name="Products" />} />
 
