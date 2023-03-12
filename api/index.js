@@ -8,6 +8,7 @@ import dotenv from "dotenv"
 //Import routes
 
 import usersRoute from "./routes/user.js"
+import authRoute from "./routes/auth.js"
 
 
 
@@ -53,4 +54,5 @@ app.listen(9000,()=>{
 
 
 app.use('/api/users', usersRoute)
+app.use('/api/auth', authRoute)
 app.use(bodyParser.json())
